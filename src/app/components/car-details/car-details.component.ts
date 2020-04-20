@@ -56,7 +56,7 @@ export class CarDetailsComponent implements OnInit {
       .subscribe(
         (response) => {
           console.log(response);
-          this.message = 'The car was updated successfully!';
+          this.message = this.currentCar.name + ' has been updated successfully!';
         },
         (error) => {
           console.log(error);

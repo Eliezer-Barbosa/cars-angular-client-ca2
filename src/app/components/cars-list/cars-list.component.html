@@ -22,7 +22,7 @@
     <h4>Cars List</h4>
     <ul class="list-group">
       <li
-        class="list-group-item"
+        class="list-group-item list-group-item-action list-group-item-light"
         *ngFor="let car of cars; let i = index"
         [class.active]="i == currentIndex"
         (mouseover)="setActiveCar(car, i)"
