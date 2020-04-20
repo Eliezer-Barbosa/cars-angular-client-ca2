@@ -1,15 +1,48 @@
 import { Component, OnInit } from '@angular/core';
+import { CarService } from 'src/app/services/car.service';
 
 @Component({
   selector: 'app-add-car',
   templateUrl: './add-car.component.html',
-  styleUrls: ['./add-car.component.css']
+  styleUrls: ['./add-car.component.css'],
 })
 export class AddCarComponent implements OnInit {
+  public car = {
+    name: '',
+    make: '',
+    available: false,
+  };
+  public submitted = false;
 
-  constructor() { }
+  constructor(private carService: CarService) { }
 
-  ngOnInit() {
+  public ngOnInit() {
+  }
+
+  public saveCar() {
+    const data = {
+      name: this.car.name,
+      make: this.car.make,
+    };
+
+    this.carService.create(data)
+      .subscribe(
+        (response) => {
+          console.log(response);
+          this.submitted = true;
+        },
+        (error) => {
+          console.log(error);
+        });
+  }
+
+  public newCar() {
+    this.submitted = false;
+    this.car = {
+      name: '',
+      make: '',
+      available: false,
+    };
   }
 
 }
