@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from './../../environments/environment.prod';
 
 // const baseUrl = 'http://localhost:8080/api/cars';
-const baseUrl = `${environment.apiUrl}/api/cars`;
+const baseUrl = `${environment.apiUrl}`;
 
 @Injectable({
   providedIn: 'root',
