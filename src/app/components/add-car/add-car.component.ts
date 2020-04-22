@@ -10,7 +10,7 @@ export class AddCarComponent implements OnInit {
   public car = {
     name: '',
     make: '',
-    available: false,
+    available: true,
   };
   public submitted = false;
 
@@ -23,6 +23,7 @@ export class AddCarComponent implements OnInit {
     const data = {
       name: this.car.name,
       make: this.car.make,
+      available: this.car.available
     };
 
     this.carService.create(data)
