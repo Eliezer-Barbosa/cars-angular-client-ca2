@@ -14,6 +14,7 @@
   "dependencies": {
     "@angular-devkit/build-angular": "~0.803.21",
     "@angular/animations": "~8.2.14",
+    "@angular/cdk": "^8.2.3",
     "@angular/cli": "~8.3.21",
     "@angular/common": "~8.2.14",
     "@angular/compiler": "~8.2.14",
@@ -26,8 +27,10 @@
     "@angular/router": "~8.2.14",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~8.9.4",
+    "angular-font-awesome": "^3.1.2",
+    "chart.js": "^2.9.3",
     "codelyzer": "^5.0.0",
+    "coloraze": "^1.0.1",
     "express": "^4.17.1",
     "express-force-https": "^1.0.0",
     "jasmine-core": "~3.4.0",
@@ -37,6 +40,8 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "ng2-charts": "^2.3.0",
+    "ng2-currency-mask": "^5.3.1",
     "primeicons": "^2.0.0",
     "primeng": "^8.1.1",
     "protractor": "~5.4.0",
@@ -47,5 +52,8 @@
     "typescript": "~3.5.3",
     "zone.js": "~0.9.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "^8.9.5",
+    "@types/webpack-env": "^1.15.1"
+  }
 }

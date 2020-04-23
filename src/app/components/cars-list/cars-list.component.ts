@@ -25,6 +25,7 @@ export class CarsListComponent implements OnInit {
         (data) => {
           this.cars = data;
           console.log(data);
+          console.log('cars total: ' + this.cars.length);
         },
         (error) => {
           console.log(error);

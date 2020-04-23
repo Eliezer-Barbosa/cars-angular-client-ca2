@@ -1,6 +1,5 @@
 <div *ngIf="currentCar" class="edit-form">
   <h4>Car details</h4>
-  <form>
     <div class="form-group">
       <label for="name">Name</label>
       <input
@@ -11,37 +10,62 @@
         name="name"
       />
     </div>
+
+    <label for="maker">Maker is {{ currentCar.make }}</label><br>
+    <p-dropdown [options]="makers" [(ngModel)]="selectedMaker"></p-dropdown>
+
     <div class="form-group">
-      <label for="description">Make</label>
+      <label for="year">Year</label>
       <input
         type="text"
+        pInputText pKeyFilter="pint"
+        min="1960" max="2020"
+        placeholder="ex: 2020"
         class="form-control"
-        id="make"
-        [(ngModel)]="currentCar.make"
-        name="make"
+        id="year"
+        maxlength="4"
+        required
+        [(ngModel)]="currentCar.year"
+        name="year"
       />
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="form-group">
+          <label for="color">Color : {{ currentCar.color }}</label>
+          <input
+            type="color"
+            class="form-control"
+            id="color"
+            required
+            [(ngModel)]="currentCar.color"
+            name="color"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <div class="input-group-prepend">
+          <span class="input-group-text">&euro;</span>
+        <input pInputText type="text" placeholder="0.00" currencyMask
+          [options]="
+          { prefix: '', thousands: '.', decimal: ',', allowNegative: false }"
+          class="form-control"
+          id="price"
+          required
+          [(ngModel)]="currentCar.price"
+          name="price"
+        />
+      </div>
     </div>
 
     <div class="form-group">
       <label><strong>Status:</strong></label>
       {{ currentCar.available ? "Available" : "Sold" }}
     </div>
-  </form>
-
-  <button
-    class="badge badge-primary mr-2"
-    *ngIf="currentCar.available"
-    (click)="updateAvailable(false)"
-  >
-    Sold
-  </button>
-  <button
-    *ngIf="!currentCar.available"
-    class="badge badge-primary mr-2"
-    (click)="updateAvailable(true)"
-  >
-    Available
-  </button>
 
   <button class="badge badge-danger mr-2" (click)="deleteCar()">
     Delete

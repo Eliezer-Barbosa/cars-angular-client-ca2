@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from './../../environments/environment.prod';
 
-// const baseUrl = 'http://localhost:8080/api/cars';
-const baseUrl = 'https://eliezer-meanstack-api.herokuapp.com/api/cars';
+const baseUrl = 'http://localhost:8080/api/cars';
+// const baseUrl = 'https://eliezer-meanstack-api.herokuapp.com/api/cars';
 
 @Injectable({
   providedIn: 'root',

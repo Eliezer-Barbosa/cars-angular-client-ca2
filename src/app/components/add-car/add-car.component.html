@@ -13,8 +13,9 @@
     </div>
 
     <div class="form-group">
-      <label for="make">Make</label>
+      <label for="name">Maker</label>
       <input
+        type="text"
         class="form-control"
         id="make"
         required
@@ -23,11 +24,59 @@
       />
     </div>
 
+    <div class="form-group">
+      <label for="year">Year</label>
+      <input
+        type="text"
+        pInputText pKeyFilter="pint"
+        min="1960" max="2020"
+        placeholder="ex: 2020"
+        class="form-control"
+        id="year"
+        maxlength="4"
+        required
+        [(ngModel)]="car.year"
+        name="year"
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="form-group">
+          <label for="color">Color : {{ car.color }}</label>
+          <input
+            type="color"
+            class="form-control"
+            id="color"
+            required
+            [(ngModel)]="car.color"
+            name="color"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <div class="input-group-prepend">
+          <span class="input-group-text">&euro;</span>
+        <input pInputText type="text" placeholder="0.00" currencyMask
+          [options]="
+          { prefix: '', thousands: '.', decimal: ',', allowNegative: false }"
+          class="form-control"
+          id="price"
+          required
+          [(ngModel)]="car.price"
+          name="price"
+        />
+      </div>
+    </div>
+
     <button (click)="saveCar()" class="btn btn-success">Submit</button>
   </div>
 
-  <div *ngIf="submitted">
+  <!-- <div *ngIf="submitted">
     <h4>{{ car.name }} has been added successfully!</h4>
     <button class="btn btn-success" (click)="newCar()">Add</button>
-  </div>
+  </div> -->
 </div>
