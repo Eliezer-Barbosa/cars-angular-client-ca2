@@ -67,17 +67,10 @@
       {{ currentCar.available ? "Available" : "Sold" }}
     </div>
 
-  <button class="badge badge-danger mr-2" (click)="deleteCar()">
-    Delete
-  </button>
+  <p-confirmDialog [transitionOptions]="'300ms'" header="Delete car" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 
-  <button type="submit" class="badge badge-success" (click)="updateCar()">
-    Update
-  </button>
-  <p>{{ message }}</p>
-</div>
+  <button type="text" (click)="confirmDelete()" pButton icon="pi pi-trash" label="Delete" class="ui-button-rounded ui-button-danger"></button>
 
-<div *ngIf="!currentCar">
-  <br />
-  <p>Cannot access this car...</p>
+  <button type="text" (click)="updateCar()" pButton icon="pi pi-pencil" label="Update" class="ui-button-rounded ui-button-warning"></button>
+
 </div>

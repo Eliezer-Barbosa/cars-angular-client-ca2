@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
@@ -13,7 +14,9 @@ export class CarsListComponent implements OnInit {
   public currentIndex = -1;
   public name = '';
 
-  constructor(private carService: CarService) { }
+  constructor(
+    private carService: CarService,
+    private route: ActivatedRoute) { }
 
   public ngOnInit() {
     this.retrieveCars();

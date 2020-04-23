@@ -2,7 +2,7 @@ declare var require: any;
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { SelectItem } from 'primeng/api';
 import { CarService } from 'src/app/services/car.service';
 
@@ -33,7 +33,8 @@ export class CarDetailsComponent implements OnInit {
     private carService: CarService,
     private route: ActivatedRoute,
     private router: Router,
-    private messageService: MessageService) {
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService) {
       this.makers = [
         {label: 'Select Maker', value: null},
         {label: 'Volkswagen', value: {id: 1, name: 'Volkswagen', code: 'VW'}},
@@ -102,15 +103,25 @@ export class CarDetailsComponent implements OnInit {
   }
 
   public deleteCar() {
-    this.carService.delete(this.currentCar.id)
+      this.carService.delete(this.currentCar.id)
       .subscribe(
-        (response) => {
-          console.log(response);
-          this.messageService.add( {severity: 'warn', summary: `${this.currentCar.name}`, detail: 'has been deleted succesfully'} );
-          this.router.navigate(['/cars']);
-        },
-        (error) => {
-          console.log(error);
-        });
+      (response) => {
+      console.log(response);
+      this.messageService.add( {severity: 'warn', summary: `${this.currentCar.name}`, detail: 'has been deleted succesfully'} );
+      this.router.navigate(['/cars']);
+    },
+    (error) => {
+      console.log(error);
+    });
   }
+
+  public confirmDelete() {
+    this.confirmationService.confirm({
+        message: `Are you sure you want to delete ${this.currentCar.name}?`,
+        accept: () => {
+            this.deleteCar();
+        },
+    });
+  }
+
 }
