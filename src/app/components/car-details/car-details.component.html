@@ -51,12 +51,14 @@
         </div>
       </div>
 
+      <p-confirmDialog [transitionOptions]="'200ms'" header="Delete car" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
       <div class="ui-g-12">
-        <button class="ui-button-warning" pButton type="button" label="Update" (click)="updateCar()"></button>
+        <button class="ui-button-warning" pButton icon="pi pi-pencil" type="button" label="Update" (click)="updateCar()"></button>
       </div>
 
       <div class="ui-g-12">
-        <button class="ui-button-danger" pButton type="button" label="Delete" (click)="deleteCar()"></button>
+        <button class="ui-button-danger" pButton icon="pi pi-trash" type="button" label="Delete" (click)="confirmDelete()"></button>
       </div>
 
       <div class="ui-g-12">
@@ -66,3 +68,78 @@
     </div>
   </div>
 </div>
+
+
+
+######################################################################################
+
+<!-- <div *ngIf="currentCar" class="edit-form">
+  <h4>Car details</h4>
+    <div class="form-group">
+      <label for="name">Name: {{currentCar.name}}</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)]="currentCar.name"
+        name="name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="maker">Maker: {{ selectedMaker ? selectedMaker.name : 'none'}}</label><br>
+      <p-dropdown [options]="makers" [(ngModel)]="selectedMaker"
+       placeholder="{{currentCar.make}}" optionLabel="name" [showClear]="true">
+      </p-dropdown>
+    </div>
+
+    <div class="form-group">
+      <label for="year">Year : {{ currentCar.year }}</label>
+      <p-slider [(ngModel)]="currentCar.year" [min]="1960" [max]="2020"></p-slider>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="form-group">
+          <label for="color">Color : {{ currentCar.color }}</label>
+          <input
+            type="color"
+            class="form-control"
+            id="color"
+            value="currentCar.color"
+            required
+            [(ngModel)]="currentCar.color"
+            name="color"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price: &euro; {{currentCar.price}}</label>
+      <div class="input-group-prepend">
+          <span class="input-group-text">&euro;</span>
+        <input pInputText type="text" placeholder="0.00" currencyMask
+          [options]="
+          { prefix: '', thousands: '.', decimal: ',', allowNegative: false }"
+          class="form-control"
+          id="price"
+          required
+          [(ngModel)]="currentCar.price"
+          name="price"
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label><strong>Status:</strong></label>
+      {{ currentCar.available ? "Available" : "Sold" }}
+    </div>
+
+  <p-confirmDialog [transitionOptions]="'300ms'" header="Delete car" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
+  <button type="text" (click)="confirmDelete()" pButton icon="pi pi-trash" label="Delete" class="ui-button-rounded ui-button-danger"></button>
+
+  <button type="text" (click)="updateCar()" pButton icon="pi pi-pencil" label="Update" class="ui-button-rounded ui-button-warning"></button>
+
+</div> -->
