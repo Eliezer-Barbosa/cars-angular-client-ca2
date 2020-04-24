@@ -65,11 +65,12 @@ export class AddCarComponent implements OnInit {
       name: this.car.name,
       make: stringify(this.selectedMaker),
       year: this.car.year,
-      color: this.getColorName(this.car.color),
+      color: this.car.color,
       price: this.car.price,
       available: this.car.available,
     };
     data.make = data.make.slice(5, 20);
+    data.color === null || data.color === '' ? data.color = 'Black' : data.color = this.getColorName(data.color);
 
     this.carService.create(data)
       .subscribe(
@@ -81,6 +82,7 @@ export class AddCarComponent implements OnInit {
         },
         (error) => {
           console.log(error);
+          console.log('color: ' + data.color);
           this.messageService.add( {severity: 'error', summary: 'Some fiels are empty', detail: error.error.message} );
         });
   }

@@ -37,6 +37,7 @@ export class CarDetailsComponent implements OnInit {
     private confirmationService: ConfirmationService) {
 
       this.makers = [
+        {name: 'Unknown'},
         {name: 'Renault'},
         {name: 'Volkswagen' },
         {name: 'Ford'},
@@ -94,12 +95,13 @@ export class CarDetailsComponent implements OnInit {
       name: this.currentCar.name,
       make: stringify(this.selectedMaker),
       year: this.currentCar.year,
-      color: this.getColorName(this.currentCar.color),
+      color: this.currentCar.color,
       price: this.currentCar.price,
       available: this.currentCar.available,
     };
     data.make = data.make.slice(5, 20);
     this.currentCar.make = data.make;
+    data.color === null || data.color === '' ? data.color = 'Black' : data.color = this.getColorName(data.color);
 
     this.carService.update(this.currentCar.id, this.currentCar)
       .subscribe(
