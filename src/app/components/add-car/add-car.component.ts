@@ -4,8 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { SelectItem } from 'primeng/api';
-import { CarService } from 'src/app/services/car.service';
 import { stringify } from 'querystring';
+import { CarService } from 'src/app/services/car.service';
 
 const Coloraze = require('coloraze');
 
@@ -14,7 +14,6 @@ const coloraze = new Coloraze();
 // tslint:disable-next-line: interface-name
 interface Maker {
   name: string;
-  // code: string;
 }
 
 @Component({
