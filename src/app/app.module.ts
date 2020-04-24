@@ -24,6 +24,7 @@ import { AppComponent } from './app.component';
 import { AddCarComponent } from './components/add-car/add-car.component';
 import { CarDetailsComponent } from './components/car-details/car-details.component';
 import { CarsListComponent } from './components/cars-list/cars-list.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CarsListComponent } from './components/cars-list/cars-list.component';
     AddCarComponent,
     CarDetailsComponent,
     CarsListComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
