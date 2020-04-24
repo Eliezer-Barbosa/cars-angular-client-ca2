@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cars-angular-client-ca2';
+  public title = 'Cars Angular';
 
   constructor(private router: Router) {}
 
-    exibindoNavbar() {
-    return this.router.url !== '/login';
+    public exibindoNavbar() {
+    return true;
   }
 }

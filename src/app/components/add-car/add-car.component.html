@@ -1,34 +1,29 @@
-<div class="submit-form">
-  <div *ngIf="!submitted">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input
-        type="text"
-        class="form-control"
-        id="name"
-        required
-        [(ngModel)]="car.name"
-        name="name"
-      />
+<div class="container">
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <h1>New Car</h1>
     </div>
 
-    <div class="form-group">
-      <label for="maker">Maker</label><br>
+    <div class="ui-g-12 ui-md-6 ui-fluid">
+      <label>Name</label><br>
+      <input type="text" pInputText name="name" [(ngModel)]="car.name" style="width: 100%;">
+    </div>
+
+    <div class="ui-g-12 ui-md-6 ui-fluid">
+      <label>Maker</label>
       <p-dropdown [options]="makers" [(ngModel)]="selectedMaker"
        placeholder="Select a Maker" optionLabel="name" [showClear]="true">
       </p-dropdown>
     </div>
 
-    <div class="form-group">
-      <label for="year">Year : {{ car.year }}</label>
-      <p-slider [(ngModel)]="car.year" [min]="1960" [max]="2020"></p-slider>
+    <div class="ui-g-12 ui-md-6 ui-fluid">
+      <label>Year : {{ car.year }}</label>
+      <p-slider [(ngModel)]="car.year" [min]="1960" [max]="2020" [style]="{'width':'100%'}"></p-slider>
     </div>
 
-
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <div class="form-group">
-          <label for="color">Color : {{ car.color }}</label>
+    <div class="ui-g-12 ui-md-6 ui-fluid">
+      <label>Color : {{ car.color }}</label>
           <input
             type="color"
             class="form-control"
@@ -37,11 +32,9 @@
             [(ngModel)]="car.color"
             name="color"
           />
-        </div>
-      </div>
     </div>
 
-    <div class="form-group">
+    <div class="ui-g-12 ui-md-6 ui-fluid">
       <label for="price">Price</label>
       <div class="input-group-prepend">
           <span class="input-group-text">&euro;</span>
@@ -57,11 +50,14 @@
       </div>
     </div>
 
-    <button (click)="saveCar()" class="btn btn-success">Submit</button>
+    <div class="ui-g-12">
+      <button pButton type="button" label="Save" (click)="saveCar()"></button>
+    </div>
+
+    <div class="ui-">
+      <a routerLink="/cars">Back to car search</a>
+    </div>
+
   </div>
 
-  <!-- <div *ngIf="submitted">
-    <h4>{{ car.name }} has been added successfully!</h4>
-    <button class="btn btn-success" (click)="newCar()">Add</button>
-  </div> -->
 </div>
