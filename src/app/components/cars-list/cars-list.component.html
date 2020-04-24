@@ -1,3 +1,6 @@
+<p-chart type="pie" [data]="data"></p-chart>
+
+
 <div class="list-row">
   <div class="col-md-8">
     <div class="input-group mb-3">
@@ -21,18 +24,22 @@
   <div class="col-md-6">
     <h4>Cars List</h4>
 
-    <p-table [value]="cars" [responsive]="true"
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <p-table [value]="cars" [responsive]="true"
       [paginator]="true" [rows]="4" [totalRecords]="this.cars.length" #table>
 
       <ng-template pTemplate="header">
         <tr>
           <th>Name</th>
+          <th>Maker</th>
           <th></th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-car>
         <tr (mouseover)="setActiveCar(car, car.id)">
           <td>{{ car.name }}</td>
+          <td>{{ car.make }}</td>
           <td>
             <a [routerLink]="['/cars', car.id]" pTooltip="Edit" tooltipPosition="top">
               <i class="pi pi-pencil" style="font-size: 2rem"></i>
@@ -40,6 +47,8 @@
         </tr>
       </ng-template>
     </p-table>
+      </div>
+    </div>
   </div>
 
   <div class="col-md-6">

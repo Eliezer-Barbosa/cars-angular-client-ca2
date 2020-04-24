@@ -42,6 +42,7 @@ export class AddCarComponent implements OnInit {
     private messageService: MessageService) {
 
       this.makers = [
+        {name: 'Unknown'},
         {name: 'Renault'},
         {name: 'Volkswagen' },
         {name: 'Ford'},

@@ -11,11 +11,11 @@ import { KeyFilterModule } from 'primeng/keyfilter';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { PaginatorModule } from 'primeng/paginator';
+import { ChartModule } from 'primeng/primeng';
 import { SliderModule } from 'primeng/slider';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
-
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -50,6 +50,7 @@ import { CarsListComponent } from './components/cars-list/cars-list.component';
     ConfirmDialogModule,
     CardModule,
     SliderModule,
+    ChartModule,
   ],
   providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent],
