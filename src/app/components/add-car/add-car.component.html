@@ -13,15 +13,10 @@
     </div>
 
     <div class="form-group">
-      <label for="name">Maker</label>
-      <input
-        type="text"
-        class="form-control"
-        id="make"
-        required
-        [(ngModel)]="car.make"
-        name="make"
-      />
+      <label for="maker">Maker</label><br>
+      <p-dropdown [options]="makers" [(ngModel)]="selectedMaker"
+       placeholder="Select a Maker" optionLabel="name" [showClear]="true">
+      </p-dropdown>
     </div>
 
     <div class="form-group">

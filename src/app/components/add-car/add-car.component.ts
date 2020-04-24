@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { SelectItem } from 'primeng/api';
 import { CarService } from 'src/app/services/car.service';
+import { stringify } from 'querystring';
 
 const Coloraze = require('coloraze');
 
@@ -13,7 +14,7 @@ const coloraze = new Coloraze();
 // tslint:disable-next-line: interface-name
 interface Maker {
   name: string;
-  code: string;
+  // code: string;
 }
 
 @Component({
@@ -22,7 +23,7 @@ interface Maker {
   styleUrls: ['./add-car.component.css'],
 })
 export class AddCarComponent implements OnInit {
-  public makers: SelectItem[];
+  public makers: Maker[];
   public selectedMaker: Maker;
 
   public car = {
@@ -42,12 +43,12 @@ export class AddCarComponent implements OnInit {
     private messageService: MessageService) {
 
       this.makers = [
-        {label: 'Select Maker', value: null},
-        {label: 'Volkswagen', value: {id: 1, name: 'Volkswagen', code: 'VW'}},
-        {label: 'Ford', value: {id: 2, name: 'Ford', code: 'FORD'}},
-        {label: 'Fiat', value: {id: 3, name: 'Fiat', code: 'FIAT'}},
-        {label: 'GM', value: {id: 4, name: 'GM', code: 'GM'}},
-        {label: 'Audi', value: {id: 5, name: 'Audi', code: 'AUDI'}},
+        {name: 'Renault'},
+        {name: 'Volkswagen' },
+        {name: 'Ford'},
+        {name: 'Fiat'},
+        {name: 'GM'},
+        {name: 'Audi'},
       ];
 
      }
@@ -63,12 +64,13 @@ export class AddCarComponent implements OnInit {
   public saveCar() {
     const data = {
       name: this.car.name,
-      make: this.car.make,
+      make: stringify(this.selectedMaker),
       year: this.car.year,
       color: this.getColorName(this.car.color),
       price: this.car.price,
       available: this.car.available,
     };
+    data.make = data.make.slice(5, 20);
 
     this.carService.create(data)
       .subscribe(
