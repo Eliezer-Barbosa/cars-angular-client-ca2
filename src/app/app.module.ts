@@ -11,6 +11,7 @@ import { KeyFilterModule } from 'primeng/keyfilter';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { PaginatorModule } from 'primeng/paginator';
+import { PanelModule } from 'primeng/panel';
 import { ChartModule } from 'primeng/primeng';
 import { SliderModule } from 'primeng/slider';
 import { TableModule } from 'primeng/table';
@@ -53,6 +54,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     CardModule,
     SliderModule,
     ChartModule,
+    PanelModule,
   ],
   providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent],

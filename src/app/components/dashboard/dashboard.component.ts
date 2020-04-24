@@ -82,7 +82,7 @@ export class DashboardComponent implements OnInit {
           {
               data: [this.unknowns, this.renaults, this.vws, this.fords, this.fiats, this.gms, this.audis],
               backgroundColor: [
-                  '#6abd4a',
+                  '#85898c',
                   '#7abfae',
                   '#bda5d4',
                   '#d9c17c',
@@ -91,7 +91,7 @@ export class DashboardComponent implements OnInit {
                   '#57cfb9'
               ],
               hoverBackgroundColor: [
-                  '#2d5c1c',
+                  '#4e5357',
                   '#548a7c',
                   '#8e6bb0',
                   '#ad9758',
