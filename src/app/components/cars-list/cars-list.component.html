@@ -1,56 +1,49 @@
-<div class="list-row">
-  <div class="col-md-8">
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search by name"
-        [(ngModel)]="name"
-      />
-      <div class="input-group-append">
-        <button
-          class="btn btn-outline-secondary"
-          type="button"
-          (click)="searchName()"
-        >
-          Search
-        </button>
-      </div>
+<div class="container">
+  <div class="ui-g">
+
+    <div class="ui-g-12">
+      <h1>Cars</h1>
     </div>
+
+    <div class="ui-g-12 ui-fluid">
+      <label>Car name</label>
+      <input pInputText type="text" name="name" [(ngModel)]="name">
+    </div>
+
+    <div class="ui-g-12">
+      <button type="button" (click)="searchName()">Search</button>
+    </div>
+
   </div>
-  <div class="col-md-6">
-    <h4>Cars List</h4>
 
-    <div class="ui-g">
-      <div class="ui-g-12">
-        <p-table [value]="cars" [responsive]="true"
-      [paginator]="true" [rows]="4" [totalRecords]="this.cars.length" #table>
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-table [value]="cars" [responsive]="true"
+        [paginator]="true" [rows]="4" [totalRecords]="this.cars.length" #table>
 
-      <ng-template pTemplate="header">
-        <tr>
-          <th>Name</th>
-          <th>Maker</th>
-          <th></th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-car>
-        <tr (mouseover)="setActiveCar(car, car.id)">
-          <td>{{ car.name }}</td>
-          <td>{{ car.make }}</td>
-          <td>
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Name</th>
+            <th>Maker</th>
+            <th></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-car>
+          <tr (mouseover)="setActiveCar(car, car.id)">
+            <td>{{ car.name }}</td>
+            <td>{{ car.make }}</td>
+            <td>
             <a [routerLink]="['/cars', car.id]" pTooltip="Edit" tooltipPosition="top">
               <i class="pi pi-pencil" style="font-size: 2rem"></i>
             </a>
-        </tr>
-      </ng-template>
-    </p-table>
-      </div>
+          </tr>
+        </ng-template>
+      </p-table>
     </div>
-  </div>
 
-  <div class="col-md-6">
-    <div *ngIf="currentCar">
-      <h4>Car</h4>
+    <div class="ui-g">
+      <div class="ui-g-12" *ngIf="currentCar">
+        <h4>Car</h4>
       <div>
         <label><strong>Name:</strong></label>
         {{ currentCar.name }}
@@ -75,6 +68,9 @@
         <label><strong>Status:</strong></label>
         {{ currentCar.available ? "Available" : "Sold" }}
       </div>
+      </div>
     </div>
+
   </div>
+
 </div>
