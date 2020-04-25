@@ -20,7 +20,14 @@
   <div class="container">
     <div class="ui-g">
       <div class="ui-g-12">
-        <button type="text" (click)="visibleSidebar2 = true" pButton icon="pi pi-bars"></button>
+        <button class="menu-icon" type="text" (click)="visibleSidebar2 = true"
+          pButton icon="pi pi-bars"
+          style="background-color: transparent;
+          border: none; outline: none;
+          background-repeat: no-repeat;
+          overflow: hidden;
+          box-shadow: none;">
+        </button>
       </div>
     </div>
   </div>
