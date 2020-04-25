@@ -1,4 +1,4 @@
-<nav class="navbar">
+<!-- <nav class="navbar">
 
   <div class="container">
     <div class="ui-g">
@@ -14,4 +14,25 @@
     <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/add">Add new car</a></li>
   </ul>
 
+</nav> -->
+
+<nav class="navbar">
+  <div class="container">
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <button type="text" (click)="visibleSidebar2 = true" pButton icon="pi pi-bars"></button>
+      </div>
+    </div>
+  </div>
 </nav>
+
+<p-sidebar [(visible)]="visibleSidebar2"
+   position="right" [baseZIndex]="10000" [style]="{ width: '0'}">
+  <ul class="navbar-menu">
+    <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/dashboard">Dashboard</a></li>
+    <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/cars">Cars</a></li>
+    <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/add">Add new car</a></li>
+  </ul>
+</p-sidebar>
+
+

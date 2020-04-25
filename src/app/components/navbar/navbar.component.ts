@@ -10,6 +10,8 @@ export class NavbarComponent implements OnInit {
 
   exibindoMenu = false;
 
+  visibleSidebar2;
+
   constructor(private router: Router) { }
 
   ngOnInit() {

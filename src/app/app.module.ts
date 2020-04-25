@@ -13,10 +13,12 @@ import { MessagesModule } from 'primeng/messages';
 import { PaginatorModule } from 'primeng/paginator';
 import { PanelModule } from 'primeng/panel';
 import { ChartModule } from 'primeng/primeng';
+import { SidebarModule } from 'primeng/sidebar';
 import { SliderModule } from 'primeng/slider';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -57,6 +59,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     SliderModule,
     ChartModule,
     PanelModule,
+    SidebarModule,
   ],
   providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent],
