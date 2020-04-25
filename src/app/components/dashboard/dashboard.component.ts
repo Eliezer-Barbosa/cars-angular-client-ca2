@@ -4,6 +4,7 @@ import { CarService } from 'src/app/services/car.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
+  // tslint:disable-next-line: object-literal-sort-keys
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
@@ -78,9 +79,11 @@ export class DashboardComponent implements OnInit {
   public showPieChart() {
     this.data = {
       labels: [ 'Unknown', 'Renault', 'Volkswagen', 'Ford', 'Fiat', 'GM', 'Audi' ],
+      // tslint:disable-next-line: object-literal-sort-keys
       datasets: [
           {
               data: [this.unknowns, this.renaults, this.vws, this.fords, this.fiats, this.gms, this.audis],
+              // tslint:disable-next-line: object-literal-sort-keys
               backgroundColor: [
                   '#85898c',
                   '#7abfae',
@@ -88,7 +91,7 @@ export class DashboardComponent implements OnInit {
                   '#d9c17c',
                   '#ebb8b0',
                   '#80cc45',
-                  '#57cfb9'
+                  '#57cfb9',
               ],
               hoverBackgroundColor: [
                   '#4e5357',
@@ -97,7 +100,7 @@ export class DashboardComponent implements OnInit {
                   '#ad9758',
                   '#e68070',
                   '#53872a',
-                  '#3c9e8c'
+                  '#3c9e8c',
               ],
           }],
       };

@@ -20,7 +20,7 @@
   <div class="container">
     <div class="ui-g">
       <div class="ui-g-12">
-        <button class="menu-icon" type="text" (click)="visibleSidebar2 = true"
+        <button class="menu-icon" type="text" (click)="showingMenu = !showingMenu"
           pButton icon="pi pi-bars"
           style="background-color: transparent;
           border: none; outline: none;
@@ -33,7 +33,7 @@
   </div>
 </nav>
 
-<p-sidebar [(visible)]="visibleSidebar2"
+<p-sidebar [(visible)]="showingMenu"
    position="right" [baseZIndex]="10000" [style]="{ width: '0'}">
   <ul class="navbar-menu">
     <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/dashboard">Dashboard</a></li>

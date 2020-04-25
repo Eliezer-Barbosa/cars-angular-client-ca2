@@ -4,17 +4,16 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  // tslint:disable-next-line: object-literal-sort-keys
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
 
-  exibindoMenu = false;
-
-  visibleSidebar2;
+  public showingMenu = false;
 
   constructor(private router: Router) { }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 }
