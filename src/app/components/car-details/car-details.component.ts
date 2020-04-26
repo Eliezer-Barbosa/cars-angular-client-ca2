@@ -132,11 +132,33 @@ export class CarDetailsComponent implements OnInit {
     });
   }
 
+  public deleteAllCars() {
+    this.carService.deleteAll()
+    .subscribe(
+    (response) => {
+    console.log(response);
+    this.messageService.add( {severity: 'warn', detail: 'All cars have been deleted succesfully'} );
+    this.router.navigate(['/dashboard']);
+  },
+  (error) => {
+    console.log(error);
+  });
+}
+
   public confirmDelete() {
     this.confirmationService.confirm({
         message: `Are you sure you want to delete ${this.currentCar.name}?`,
         accept: () => {
             this.deleteCar();
+        },
+    });
+  }
+
+  public confirmDeleteAll() {
+    this.confirmationService.confirm({
+        message: `Are you sure you want to delete all cars?`,
+        accept: () => {
+            this.deleteAllCars();
         },
     });
   }

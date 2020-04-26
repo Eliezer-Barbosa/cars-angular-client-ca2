@@ -11,6 +11,7 @@ import { CarService } from 'src/app/services/car.service';
 export class DashboardComponent implements OnInit {
 
   public data: any;
+  public options: any;
 
   public cars: any;
 
@@ -80,6 +81,18 @@ export class DashboardComponent implements OnInit {
 
   public showPieChart() {
     Chart.defaults.global.defaultFontColor = 'white';
+
+    this.options = {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true,
+            min: 0,
+            precision: 0,
+          },
+        }],
+      }
+    },
 
     this.data = {
       labels: [ 'Unknown', 'Renault', 'Volkswagen', 'Ford', 'Fiat', 'GM', 'Audi' ],

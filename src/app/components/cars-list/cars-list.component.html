@@ -10,8 +10,12 @@
       <input pInputText type="text" name="name" [(ngModel)]="name" style="width: 100%;">
     </div>
 
-    <div class="ui-g-12">
+    <div class="ui-g-6">
       <p-button type="button" icon="pi pi-search" label="Search" (click)="searchName()"></p-button>
+    </div>
+
+    <div class="ui-g-6">
+      <a pButton type="button" label="Add" class="ui-button-secondary" icon="pi pi-plus" routerLink="/add"></a>
     </div>
 
   </div>
