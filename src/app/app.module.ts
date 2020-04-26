@@ -7,6 +7,7 @@ import { ConfirmationService } from 'primeng/api';
 import { CardModule } from 'primeng/card';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
@@ -60,6 +61,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ChartModule,
     PanelModule,
     SidebarModule,
+    InputTextModule,
   ],
   providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent],
