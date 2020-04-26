@@ -46,33 +46,38 @@
     </div>
 
     <div class="ui-g">
+
       <div class="ui-g-12" *ngIf="currentCar">
         <h4>Car</h4>
       <div>
+
+      <div class="ui-g-4">
         <label><strong>Name:</strong></label>
         {{ currentCar.name }}
       </div>
-      <div>
+
+      <div class="ui-g-4">
         <label><strong>Make:</strong></label>
         {{ currentCar.make }}
       </div>
-      <div>
+
+      <div class="ui-g-4">
         <label><strong>Year:</strong></label>
         {{ currentCar.year }}
       </div>
-      <div>
-        <label><strong>Color:</strong></label>
-        {{ currentCar.color }}
+
+      <div class="ui-g-4">
+        <label><strong>Color: </strong>{{ currentCar.color }}</label>
       </div>
-      <div>
-        <label><strong>Price:</strong></label>
-        {{ currentCar.price }}
+
+      <div class="ui-g-4">
+        <label><strong>Price: &euro;</strong>{{ currentCar.price | number:'1.2-2' }}</label>
       </div>
-      <div>
-        <label><strong>Status:</strong></label>
-        {{ currentCar.available ? "Available" : "Sold" }}
+
+      <div class="ui-g-4">
+        <label><strong>Status: </strong>{{ currentCar.available ? "Available" : "Sold" }}</label>
       </div>
-      </div>
+
     </div>
 
   </div>
