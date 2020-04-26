@@ -17,7 +17,7 @@
   padding: 0;
   z-index: 9998;
 
-  background-color: #3a3633;
+  background-color: black;
 
   list-style: none;
 }
@@ -32,9 +32,9 @@
 }
 
 .navbar-menuitem a:hover {
-  color: #fff;
+  color: #1ea04c;
 }
 
 .navbar-menuitem.ativo {
-  background-color: #494541;
+  background-color: black;
 }

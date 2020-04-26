@@ -37,7 +37,7 @@
     <div class="ui-g-12 ui-md-6 ui-fluid">
       <label for="price">Price</label>
       <div class="input-group-prepend">
-          <span class="input-group-text">&euro;</span>
+          <span class="input-group-text" style="background-color: black; color: white;">&euro;</span>
         <input pInputText type="text" placeholder="0.00" currencyMask
           [options]="
           { prefix: '', thousands: '.', decimal: ',', allowNegative: false }"
@@ -52,11 +52,11 @@
     </div>
 
     <div class="ui-g-12">
-      <button pButton type="button" icon="pi pi-save" label="Save" (click)="saveCar()"></button>
+      <button pButton type="button" icon="pi pi-save" label="Save" class="ui-button-rounded ui-button-success" style="background-color: black;" (click)="saveCar()"></button>
     </div>
 
     <div class="ui-g-12">
-      <a  routerLink="/cars">Back to car search</a>
+      <button pButton type="button" icon="pi pi-chevron-left" class="ui-button-rounded ui-button-success" style="background-color: black;" routerLink="/cars"></button>
     </div>
 
   </div>

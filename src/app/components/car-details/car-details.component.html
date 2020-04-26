@@ -54,19 +54,19 @@
       <p-confirmDialog [transitionOptions]="'200ms'" header="Delete car" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 
       <div class="ui-g-12">
-        <button class="ui-button-warning" pButton icon="pi pi-pencil" type="button" label="Update" (click)="updateCar()"></button>
+        <button pButton class="ui-button-rounded ui-button-success" style="background-color: black;" icon="pi pi-pencil" type="button" label="Update" (click)="updateCar()"></button>
       </div>
 
       <div class="ui-g-6">
-        <button class="ui-button-danger" pButton icon="pi pi-trash" type="button" label="Delete" (click)="confirmDelete()"></button>
+        <button pButton class="ui-button-rounded ui-button-warning" style="color: white; background-color: black" icon="pi pi-trash" type="button" label="Delete" (click)="confirmDelete()"></button>
       </div>
 
       <div class="ui-g-6">
-        <button class="ui-button-danger" pButton icon="pi pi-trash" type="button" label="Delete All" (click)="confirmDeleteAll()"></button>
+        <button pButton class="ui-button-rounded ui-button-danger" style="background-color: black;" icon="pi pi-trash" type="button" label="Delete All" (click)="confirmDeleteAll()"></button>
       </div>
 
       <div class="ui-g-12">
-        <a routerLink="/cars">Back to car search</a>
+        <button pButton type="button" class="ui-button-rounded ui-button-success" icon="pi pi-chevron-left" routerLink="/cars" style="background-color: black;"></button>
       </div>
 
     </div>
