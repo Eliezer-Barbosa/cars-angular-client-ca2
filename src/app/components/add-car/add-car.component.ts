@@ -19,6 +19,7 @@ interface Maker {
 @Component({
   selector: 'app-add-car',
   templateUrl: './add-car.component.html',
+  // tslint:disable-next-line: object-literal-sort-keys
   styleUrls: ['./add-car.component.css'],
 })
 export class AddCarComponent implements OnInit {
@@ -27,6 +28,7 @@ export class AddCarComponent implements OnInit {
 
   public car = {
     name: '',
+    // tslint:disable-next-line: object-literal-sort-keys
     make: '',
     year: '',
     color: '',
@@ -42,13 +44,17 @@ export class AddCarComponent implements OnInit {
     private messageService: MessageService) {
 
       this.makers = [
-        {name: 'Unknown'},
-        {name: 'Renault'},
-        {name: 'Volkswagen' },
-        {name: 'Ford'},
+        {name: 'Audi' },
+        {name: 'BMW'},
+        {name: 'Chevrolet'},
+        {name: 'Ferrari'},
         {name: 'Fiat'},
-        {name: 'GM'},
-        {name: 'Audi'},
+        {name: 'Ford'},
+        {name: 'Honda'},
+        {name: 'Mercedes Benz'},
+        {name: 'Porsche'},
+        {name: 'Renault'},
+        {name: 'Volkswagen'},
       ];
 
      }
@@ -64,6 +70,7 @@ export class AddCarComponent implements OnInit {
   public saveCar() {
     const data = {
       name: this.car.name,
+      // tslint:disable-next-line: object-literal-sort-keys
       make: stringify(this.selectedMaker),
       year: this.car.year,
       color: this.car.color,
@@ -92,6 +99,7 @@ export class AddCarComponent implements OnInit {
     this.submitted = false;
     this.car = {
       name: '',
+      // tslint:disable-next-line: object-literal-sort-keys
       make: '',
       year: '',
       color: '',
