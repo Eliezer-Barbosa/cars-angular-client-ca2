@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as Chart from 'chart.js';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
@@ -69,6 +70,7 @@ export class DashboardComponent implements OnInit {
           console.log('audis: ' + this.audis);
 
           this.showPieChart();
+          this.showBarChart();
 
         },
         (error) => {
@@ -77,6 +79,40 @@ export class DashboardComponent implements OnInit {
   }
 
   public showPieChart() {
+    Chart.defaults.global.defaultFontColor = 'white';
+
+    this.data = {
+      labels: [ 'Unknown', 'Renault', 'Volkswagen', 'Ford', 'Fiat', 'GM', 'Audi' ],
+      // tslint:disable-next-line: object-literal-sort-keys
+      datasets: [
+          {
+              data: [this.unknowns, this.renaults, this.vws, this.fords, this.fiats, this.gms, this.audis],
+              // tslint:disable-next-line: object-literal-sort-keys
+              backgroundColor: [
+                  '#85898c',
+                  '#7abfae',
+                  '#bda5d4',
+                  '#d9c17c',
+                  '#ebb8b0',
+                  '#80cc45',
+                  '#57cfb9',
+              ],
+              hoverBackgroundColor: [
+                  '#4e5357',
+                  '#548a7c',
+                  '#8e6bb0',
+                  '#ad9758',
+                  '#e68070',
+                  '#53872a',
+                  '#3c9e8c',
+              ],
+          }],
+      };
+  }
+
+  public showBarChart() {
+    Chart.defaults.global.defaultFontColor = 'white';
+
     this.data = {
       labels: [ 'Unknown', 'Renault', 'Volkswagen', 'Ford', 'Fiat', 'GM', 'Audi' ],
       // tslint:disable-next-line: object-literal-sort-keys
