@@ -132,7 +132,6 @@ export class DashboardComponent implements OnInit {
                   '#7575d9',
                   '#d46e3f',
                   '#d1bc43',
-                  '#68d43d',
               ],
               hoverBackgroundColor: [
                   '#4e5357',
@@ -146,7 +145,6 @@ export class DashboardComponent implements OnInit {
                   '#31316e',
                   '#804022',
                   '#877929',
-                  '#3d8022',
               ],
           }],
       };
@@ -170,7 +168,7 @@ export class DashboardComponent implements OnInit {
             data: [
               this.audis,
               this.bmws, this.chevs,
-              this.ferraris, this.fiats, this.fords,
+              this.ferraris, this.fiats, this.fords, this.hondas,
               this.mercedes, this.porsches,
               this.renaults, this.vws,
             ],
@@ -187,7 +185,6 @@ export class DashboardComponent implements OnInit {
                 '#7575d9',
                 '#d46e3f',
                 '#d1bc43',
-                '#68d43d',
               ],
               hoverBackgroundColor: [
                 '#4e5357',
@@ -201,7 +198,6 @@ export class DashboardComponent implements OnInit {
                 '#31316e',
                 '#804022',
                 '#877929',
-                '#3d8022',
               ],
           }],
       };
